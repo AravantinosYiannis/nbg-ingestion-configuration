@@ -1,0 +1,37 @@
+application:
+  cosmosDB:
+    endpoint: https://cosmos-intracom-account.documents.azure.com:443/
+    primaryKey: pvuViK2hY1QaLk1GPgv8EJOsuGBLIHjE01EqtKDot4XJKdefDLAO50R9Pd8onAUbSLaCU7o3omL7ACDb0AqmZg==
+    database: NBG
+    container: TransactionEvents
+  proxy:
+    enable: true
+    proxyHost: icache.intracomtel.com
+    proxyPort: 80
+  postgreSQL:
+    enable: false
+    url: jdbc:postgresql://c.cosmos-intracom-postgresql.postgres.database.azure.com:443/citus?ssl=true&sslmode=require
+    username: citus
+    password: Postgresql123
+    table: TransactionEvents
+  testValue: 4
+
+logging:
+  level:
+    com.intracom: info
+    org.springframework.web: info
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+---
+spring.config.activate.on-profile: azure
+
+
+application:
+  proxy:
+    enable: false
+  postgreSQL:
+    enable: false
