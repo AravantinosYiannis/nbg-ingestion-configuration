@@ -10,7 +10,7 @@ application:
     proxyPort: 80
   postgreSQL:
     enable: false
-    url: jdbc:postgresql://c.cosmos-intracom-postgresql.postgres.database.azure.com:443/citus?ssl=true&sslmode=require
+    url: jdbc:postgresql://c.cosmos-intracom-postgresql.postgres.database.azure.com:5432/citus?ssl=true&sslmode=require
     username: citus
     password: Postgresql123
     table: TransactionEvents
@@ -34,4 +34,4 @@ application:
   proxy:
     enable: false
   postgreSQL:
-    enable: false
+    enable: true
