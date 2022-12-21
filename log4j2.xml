@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="10">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">	
+      <PatternLayout pattern="%d{ISO8601} %-5level [%t] %c{5}:%L - %msg%n" />	
+    </Console>    
+  </Appenders>
+
+  <Loggers>
+        <!-- LOG everything at INFO level -->
+    <Root level="info">
+      <AppenderRef ref="Console" />
+      
+    </Root>
+
+    <Logger name="com.intracom" level="trace" />
+    <Logger name="org.springframework.web" level="info" />
+  </Loggers>
+
+</Configuration>
